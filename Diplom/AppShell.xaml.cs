@@ -1,4 +1,6 @@
-﻿namespace Diplom;
+﻿using Diplom.LocalizationController;
+
+namespace Diplom;
 
 public partial class AppShell : Shell
 {

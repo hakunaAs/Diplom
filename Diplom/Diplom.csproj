@@ -60,6 +60,21 @@
 		<PackageReference Include="UraniumUI" Version="2.7.4" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Resources\Localization\AppLocalization.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>AppLocalization.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Localization\AppLocalization.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>AppLocalization.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.4.2</wizardVersion>
 		<projectType>CodeBehind</projectType>

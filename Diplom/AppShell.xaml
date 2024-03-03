@@ -1,21 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-	x:Class="Diplom.AppShell"
-	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:views="clr-namespace:Diplom.Views"
-	xmlns:local="clr-namespace:Diplom">
+    x:Class="Diplom.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Diplom"
+    xmlns:views="clr-namespace:Diplom.Views"
+    BindingContext="{DynamicResource ViewModel}">
+    <Shell.Resources>
+        <local:AppShellViewModel x:Key="ViewModel" />
+    </Shell.Resources>
 
-	<ShellContent
-		Shell.NavBarIsVisible="true"
-		Title="Main"
-		Icon="iconblank.png"
-		ContentTemplate="{DataTemplate views:MainPage}"
-		Route="MainPage" />
-	<ShellContent
-		Shell.NavBarIsVisible="true"
-		Title="ListDetail"
-		Icon="iconlistdetail.png"
-		ContentTemplate="{DataTemplate views:ListDetailPage}"
-		Route="ListDetailPage" />
+    <ShellContent
+        Title="{Binding LocalizationResourceManager[Police]}"
+        ContentTemplate="{DataTemplate views:MainPage}"
+        Icon="iconblank.png"
+        Route="MainPage"
+        Shell.NavBarIsVisible="true" />
+    <ShellContent
+        Title="{Binding LocalizationResourceManager[Fire]}"
+        ContentTemplate="{DataTemplate views:ListDetailPage}"
+        Icon="iconlistdetail.png"
+        Route="ListDetailPage"
+        Shell.NavBarIsVisible="true" />
 </Shell>
