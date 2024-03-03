@@ -44,6 +44,9 @@
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+		<MauiImage Update="Resources\Images\home.svg">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiImage>
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -53,11 +56,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Icons\Ambulance.svg" />
+	  <None Remove="Resources\Icons\fire_engine.svg" />
+	  <None Remove="Resources\Icons\Home.svg" />
+	  <None Remove="Resources\Icons\police_car.svg" />
+	  <None Remove="Resources\Icons\Settings.svg" />
+	  <None Remove="Resources\Images\app_icon.jpg" />
+	  <None Remove="Resources\Images\app_icon1.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Maui.Graphics" Version="9.0.0-preview.1.9973" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
 		<PackageReference Include="UraniumUI" Version="2.7.4" />
+		<PackageReference Include="UraniumUI.Icons.FontAwesome" Version="2.8.0" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.8.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -73,6 +89,17 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>AppLocalization.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\GlobalPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Icons\" />
+	  <Folder Include="PolicePage\" />
 	</ItemGroup>
 
 	<PropertyGroup Label="MauiAppAccelerator">

@@ -4,22 +4,35 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Diplom"
+    xmlns:micons="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
     xmlns:views="clr-namespace:Diplom.Views"
-    BindingContext="{DynamicResource ViewModel}">
+    Title="{Binding LocalizationResourceManager[AppName]}"
+    BackgroundColor="Red"
+    BindingContext="{DynamicResource ViewModel}"
+    FlyoutBackgroundColor="Red">
     <Shell.Resources>
         <local:AppShellViewModel x:Key="ViewModel" />
     </Shell.Resources>
-
+    <Shell.FlyoutHeader>
+        <Image Source="app_icon1.jpg" />
+    </Shell.FlyoutHeader>
     <ShellContent
-        Title="{Binding LocalizationResourceManager[Police]}"
-        ContentTemplate="{DataTemplate views:MainPage}"
-        Icon="iconblank.png"
+        Title="{Binding LocalizationResourceManager[Main]}"
+        ContentTemplate="{DataTemplate views:GlobalPage}"
         Route="MainPage"
-        Shell.NavBarIsVisible="true" />
+        Shell.NavBarIsVisible="True">
+        <ShellContent.Icon>
+            <FontImageSource
+                FontFamily="MaterialRegular"
+                Glyph="{x:Static micons:MaterialRegular.Home}"
+                Color="{AppThemeBinding Dark=Red,
+                                        Light=Black}" />
+        </ShellContent.Icon>
+    </ShellContent>
     <ShellContent
-        Title="{Binding LocalizationResourceManager[Fire]}"
-        ContentTemplate="{DataTemplate views:ListDetailPage}"
-        Icon="iconlistdetail.png"
-        Route="ListDetailPage"
-        Shell.NavBarIsVisible="true" />
+        Title="{Binding LocalizationResourceManager[Settings]}"
+        ContentTemplate="{DataTemplate views:GlobalPage}"
+        Icon="settings.svg"
+        Route="Settings"
+        Shell.NavBarIsVisible="True" />
 </Shell>

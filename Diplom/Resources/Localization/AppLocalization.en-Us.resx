@@ -104,4 +104,16 @@
   <data name="Police" xml:space="preserve">
     <value>Police</value>
   </data>
+  <data name="FireService" xml:space="preserve">
+    <value>Fire service</value>
+  </data>
+  <data name="Emergency" xml:space="preserve">
+    <value>Emergency</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Main</value>
+  </data>
 </root>

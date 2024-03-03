@@ -70,11 +70,47 @@ namespace Diplom.Resources.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Скорая медицинская помощь.
+        /// </summary>
+        internal static string Emergency {
+            get {
+                return ResourceManager.GetString("Emergency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Противопожарная служба.
+        /// </summary>
+        internal static string FireService {
+            get {
+                return ResourceManager.GetString("FireService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string Main {
+            get {
+                return ResourceManager.GetString("Main", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Полиция.
         /// </summary>
         internal static string Police {
             get {
                 return ResourceManager.GetString("Police", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Настройки.
+        /// </summary>
+        internal static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
     }

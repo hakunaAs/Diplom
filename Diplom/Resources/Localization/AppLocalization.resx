@@ -104,4 +104,16 @@
   <data name="Police" xml:space="preserve">
     <value>Полиция</value>
   </data>
+  <data name="FireService" xml:space="preserve">
+    <value>Противопожарная служба</value>
+  </data>
+  <data name="Emergency" xml:space="preserve">
+    <value>Скорая медицинская помощь</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Главная</value>
+  </data>
 </root>
