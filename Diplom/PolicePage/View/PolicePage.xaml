@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Diplom.PolicePage.PolicePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Diplom.PolicePage"
+    xmlns:map="clr-namespace:Diplom.MapUI"
+    xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+    Title="{Binding LocalizationResourceManager[Police]}"
+    BindingContext="{DynamicResource ViewModel}">
+    <ContentPage.Resources>
+        <local:PolicePageViewModel x:Key="ViewModel" />
+    </ContentPage.Resources>
+    <Grid>
+        <map:MapPage />
+        <ImageButton WidthRequest="100" HeightRequest="100" Source="{mi:Material Sync}" />
+    </Grid>
+</ContentPage>

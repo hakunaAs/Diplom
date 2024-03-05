@@ -18,7 +18,7 @@
     </Shell.FlyoutHeader>
     <ShellContent
         Title="{Binding LocalizationResourceManager[Main]}"
-        ContentTemplate="{DataTemplate views:GlobalPage}"
+        ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage"
         Shell.NavBarIsVisible="True">
         <ShellContent.Icon>
@@ -31,7 +31,7 @@
     </ShellContent>
     <ShellContent
         Title="{Binding LocalizationResourceManager[Settings]}"
-        ContentTemplate="{DataTemplate views:GlobalPage}"
+        ContentTemplate="{DataTemplate views:MainPage}"
         Icon="settings.svg"
         Route="Settings"
         Shell.NavBarIsVisible="True" />

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="Diplom.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fireDepartment="clr-namespace:Diplom.FireDepartment"
+    xmlns:hospital="clr-namespace:Diplom.HospitalPage"
+    xmlns:local="clr-namespace:Diplom.Views"
+    xmlns:micons="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+    xmlns:police="clr-namespace:Diplom.PolicePage"
+    BackgroundColor="#5A32b9ff"
+     
+    BindingContext="{DynamicResource ViewModel}">
+    <Shell.Resources>
+        <local:MainPageViewModel x:Key="ViewModel" />
+    </Shell.Resources>
+    <TabBar
+        x:Name="MyBar"
+        FlyoutItemIsVisible="True">
+        <ShellContent
+            Title="{Binding LocalizationResourceManager[FireService]}"
+            ContentTemplate="{DataTemplate fireDepartment:FireDepartmentPage}">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="MaterialRegular"
+                    Glyph="{x:Static micons:MaterialRegular.Fireplace}"
+                    Color="{AppThemeBinding Dark=Red,
+                                            Light={StaticResource Gray100}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent
+            x:Name="PoliceTab"
+            Title="{Binding LocalizationResourceManager[Police]}"
+            ContentTemplate="{DataTemplate police:PolicePage}">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="MaterialRegular"
+                    Glyph="{x:Static micons:MaterialRegular.Local_police}"
+                    Color="{AppThemeBinding Dark=Red,
+                                            Light={StaticResource Gray100}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent
+            Title="{Binding LocalizationResourceManager[Emergency]}"
+            ContentTemplate="{DataTemplate hospital:HospitalPage}">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="MaterialRegular"
+                    Glyph="{x:Static micons:MaterialRegular.Local_hospital}"
+                    Color="{AppThemeBinding Dark=Red,
+                                            Light={StaticResource Gray100}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+    </TabBar>
+</Shell>

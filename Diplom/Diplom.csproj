@@ -56,16 +56,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Icons\Ambulance.svg" />
-	  <None Remove="Resources\Icons\fire_engine.svg" />
-	  <None Remove="Resources\Icons\Home.svg" />
-	  <None Remove="Resources\Icons\police_car.svg" />
-	  <None Remove="Resources\Icons\Settings.svg" />
 	  <None Remove="Resources\Images\app_icon.jpg" />
 	  <None Remove="Resources\Images\app_icon1.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AathifMahir.Maui.MauiIcons.Material" Version="2.1.1" />
+		<PackageReference Include="Mapsui.Maui" Version="4.1.4" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
@@ -77,10 +74,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="FireDepartment\View\FireDepartmentPage.xaml.cs">
+	    <DependentUpon>FireDepartmentPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\Localization\AppLocalization.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>AppLocalization.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MainPage.xaml.cs">
+	    <DependentUpon>MainPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -92,14 +95,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\GlobalPage.xaml">
+	  <MauiXaml Update="FireDepartment\View\FireDepartmentPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Resources\Icons\" />
-	  <Folder Include="PolicePage\" />
+	  <MauiXaml Update="HospitalPage\View\HospitalPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PolicePage\View\PolicePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<PropertyGroup Label="MauiAppAccelerator">

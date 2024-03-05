@@ -1,4 +1,6 @@
 ﻿using UraniumUI;
+using MauiIcons.Material;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Diplom;
 
@@ -9,16 +11,18 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
+            .UseMaterialMauiIcons()
+            .UseSkiaSharp(true)
+            .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddMaterialIconFonts();
             });
 
-		//builder.Services.AddSingleton<MainPage>();
+        //builder.Services.AddSingleton<MainPage>();
 
-		builder.Services.AddTransient<SampleDataService>();
+        builder.Services.AddTransient<SampleDataService>();
 		builder.Services.AddTransient<ListDetailDetailPage>();
 
 		builder.Services.AddSingleton<ListDetailPage>();
